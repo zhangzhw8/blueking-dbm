@@ -26,14 +26,25 @@ class DBCCModule(str, StructuredEnum):
 
 
 class TagType(str, StructuredEnum):
-    CUSTOM = EnumField("custom", _("custom"))
-    SYSTEM = EnumField("system", _("system"))
+    CUSTOM = EnumField("custom", _("自定义标签"))
+    SYSTEM = EnumField("system", _("系统标签"))
+    BUILTIN = EnumField("builtin", _("内置标签"))
 
 
 class SystemTagEnum(str, StructuredEnum):
     """系统内置的tag名称"""
 
     TEMPORARY = EnumField("temporary", _("temporary"))
+
+
+class TagResourceEnum(int, StructuredEnum):
+    """资源类型"""
+
+    CLUSTER = EnumField(0, _("集群"))
+    STORAGE_INSTANCE = EnumField(1, _("存储实例"))
+    PROXY_INSTANCE = EnumField(2, _("代理实例"))
+    MACHINE = EnumField(3, _("实例机器"))
+    RESOURCE_MACHINE = EnumField(4, _("资源池机器"))
 
 
 class RedisVerUpdateNodeType(str, StructuredEnum):
