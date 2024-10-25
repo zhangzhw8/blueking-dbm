@@ -23,5 +23,5 @@ class DirtyMachineAdmin(admin.ModelAdmin):
 @admin.register(models.MachineEvent)
 class MachineEventAdmin(admin.ModelAdmin):
     list_display = ("ip", "bk_biz_id", "bk_host_id", "event", "to", "ticket")
-    list_filter = ("ip", "bk_biz_id", "pool")
+    list_filter = ("ip", "bk_biz_id", "to")
     search_fields = ("ip", "bk_biz_id", "bk_host_id")
